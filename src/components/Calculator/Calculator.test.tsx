@@ -15,4 +15,11 @@ describe('<Calculator />', () => {
     const rows = screen.getAllByRole('row')
     expect(rows).toHaveLength(4)
   })
+  it('shows operators', ()=> {
+    render(<Calculator />);
+    const operators = ['+', '-', '×', '÷'];
+    operators.forEach(op => {
+      expect(screen.getByText(op.toString())).toBeInTheDocument();
+    })
+  })
 })

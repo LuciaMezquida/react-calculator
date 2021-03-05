@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 
 const rows = [[7, 8, 9], [4, 5, 6], [1, 2, 3], [0]];
 const operators = ['+', '-', '×', '÷'];
+const equal = '=';
+const clear = 'C';
 
 const Calculator = () => {
-  const renderRows = rows.map(row => {
+  const renderRows = rows.map((row, index) => {
     return(
-      <div key={row.toString()} role='row'>
+      <div key={index} role='row'>
+        {index === 3 && <button>{clear}</button>}
         {row.map(number => (
-        <button key={number}>{number.toString()}</button>
-
+        <button key={number}>{number}</button>
         ))}
+        {index === 3 && <button>{equal}</button>}
       </div>
     )
   }

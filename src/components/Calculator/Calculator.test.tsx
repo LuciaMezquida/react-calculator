@@ -22,9 +22,14 @@ describe('<Calculator />', () => {
       expect(screen.getByText(op.toString())).toBeInTheDocument();
     })
   })
-  it('render equal', ()=> {
+  it('render equal sign', ()=> {
     render(<Calculator />);
     const equal = '=';
     expect(screen.getByText(equal)).toBeInTheDocument()
+  })
+  it('render clear sign', ()=> {
+    render(<Calculator />);
+    const clear = 'C';
+    expect(screen.getByText(clear)).toBeInTheDocument()
   })
 })

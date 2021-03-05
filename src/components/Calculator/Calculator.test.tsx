@@ -10,4 +10,9 @@ describe('<Calculator />', () => {
       expect(screen.getByText(number.toString())).toBeInTheDocument();
     })
   })
+  it('show 4 rows', ()=>{
+    render(<Calculator />);
+    const rows = screen.getAllByRole('row')
+    expect(rows).toHaveLength(4)
+  })
 })

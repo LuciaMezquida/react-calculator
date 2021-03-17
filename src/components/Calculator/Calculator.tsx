@@ -19,10 +19,11 @@ const Calculator = () => {
     const results = calculateExpression(value);
     setValue(results);
   };
+  const clearValue = () => {setValue('')}
   const renderRows = rows.map((row, index) => {
     return(
       <div key={index} role='row'>
-        {index === 3 && <button>{clear}</button>}
+        {index === 3 && <button onClick={clearValue}>{clear}</button>}
         {row.map(n => (
         <button onClick={() => setValue(value.concat(n.toString()))} key={n}>{n}</button>
         ))}

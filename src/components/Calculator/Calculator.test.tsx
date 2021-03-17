@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Calculator from './Calculator';
+import * as module from './Calculator'
 
 describe('<Calculator />', () => {
   it('shows numbers', ()=> {
@@ -142,3 +143,34 @@ describe('<Calculator />', () => {
     ).toBe("");
   });
 })
+describe("calculateExpression", () => {
+  it("correctly computes for 2 numbers with +", () => {
+    expect(module.calculateExpression("1+1")).toBe(2);
+    expect(module.calculateExpression("10+10")).toBe(20);
+    expect(module.calculateExpression("11+345")).toBe(356);
+  });
+
+  it("correctly substracts 2 numbers", () => {
+    expect(module.calculateExpression("1-1")).toBe(0);
+    expect(module.calculateExpression("10-1")).toBe(9);
+    expect(module.calculateExpression("11-12")).toBe(-1);
+  });
+
+  it("correctly multiples 2 numbers", () => {
+    expect(module.calculateExpression("1×1")).toBe(1);
+    expect(module.calculateExpression("10×0")).toBe(0);
+    expect(module.calculateExpression("11×-12")).toBe(-132);
+  });
+
+  it("correctly divides 2 numbers", () => {
+    expect(module.calculateExpression("1÷1")).toBe(1);
+    expect(module.calculateExpression("10÷2")).toBe(5);
+    expect(module.calculateExpression("144÷12")).toBe(12);
+  });
+
+  it("division by 0 returns 0 and logs exception", () => {
+    const errorSpy = jest.spyOn(console, "error");
+    expect(module.calculateExpression("1÷0")).toBe(undefined);
+    expect(errorSpy).toHaveBeenCalledTimes(1);
+  });
+});

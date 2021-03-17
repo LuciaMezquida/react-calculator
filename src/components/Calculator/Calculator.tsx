@@ -4,7 +4,7 @@ const rows = [[7, 8, 9], [4, 5, 6], [1, 2, 3], [0]];
 const operators = ['+', '-', '×', '÷'];
 const equal: string = '=';
 const clear: string = 'C';
-const calculateExpression = (expression: string) => {
+export const calculateExpression = (expression: string) => {
   const mulRegex = /×/g;
   const divRegex = /÷/g;
   const toEvaluate = expression.replace(mulRegex, "*").replace(divRegex, "/");

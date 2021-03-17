@@ -32,4 +32,12 @@ describe('<Calculator />', () => {
     const clear = 'C';
     expect(screen.getByText(clear)).toBeInTheDocument()
   })
+  it("renders an input", () => {
+    render(<Calculator />);
+    expect(screen.getByPlaceholderText("calculate")).toBeInTheDocument();
+  });
+  it("renders an input disabled", () => {
+    render(<Calculator />);
+    expect(screen.getByPlaceholderText("calculate")).toBeDisabled();
+  });
 })

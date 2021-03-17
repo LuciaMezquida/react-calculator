@@ -6,12 +6,13 @@ const equal = '=';
 const clear = 'C';
 
 const Calculator = () => {
+  const [value, setValue] = useState('')
   const renderRows = rows.map((row, index) => {
     return(
       <div key={index} role='row'>
         {index === 3 && <button>{clear}</button>}
-        {row.map(number => (
-        <button key={number}>{number}</button>
+        {row.map(n => (
+        <button key={n}>{n}</button>
         ))}
         {index === 3 && <button>{equal}</button>}
       </div>
@@ -24,6 +25,12 @@ const Calculator = () => {
   return(
     <>
     <h1>Calculator</h1>
+    <input
+type="text"
+defaultValue={value}
+placeholder="calculate"
+disabled
+/>
     <div className="calculator" role='grid'>
       {renderRows}
       {renderOperators}

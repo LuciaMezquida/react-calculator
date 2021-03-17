@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { evaluate } from "mathjs";
 
 const rows = [[7, 8, 9], [4, 5, 6], [1, 2, 3], [0]];
 const operators = ['+', '-', '×', '÷'];
@@ -12,11 +13,11 @@ export const calculateExpression = (expression: string) => {
   if (!expression || expression.length === 0) {
     return;
   }
-  const mulRegex = /×/g;
-  const divRegex = /÷/g;
-  const divideByZero = /\/0/g;
+  const mulRegex: RegExp = /×/g;
+  const divRegex: RegExp = /÷/g;
+  const divideByZero: RegExp = /\/0/g;
   let toEvaluate = expression.replace(mulRegex, "*").replace(divRegex, "/");
-  // todo - refactor eval later
+  
   try {
     if (divideByZero.test(toEvaluate)) {
       throw new Error("Can not divide by 0!");
@@ -25,8 +26,8 @@ export const calculateExpression = (expression: string) => {
     if (!lastCharaterIsNumber) {
       toEvaluate = toEvaluate.slice(0, -1);
     }
-    // todo - refactor eval later
-    const result = eval(toEvaluate);
+    
+    const result = evaluate(toEvaluate);
     return result;
 
     } catch (err) {
@@ -47,7 +48,7 @@ const Calculator = () => {
     return(
       <div key={index} role='row'>
         {index === 3 && <button onClick={clearValue}>{clear}</button>}
-        {row.map(n => (
+        {row.map((n) => (
         <button onClick={() => setValue(value.toString().concat(n.toString()))} key={n}>{n}</button>
         ))}
         {index === 3 && <button onClick={calculate}>{equal}</button>}
@@ -61,7 +62,7 @@ const Calculator = () => {
   return(
     <>
     <h1>Calculator</h1>
-    <input type="text" defaultValue={value} placeholder="calculate" disabled/>
+    <input type="text" defaultValue={value} placeholder="0" disabled/>
     <div className="calculator" role='grid'>
       {renderRows}
       {renderOperators}

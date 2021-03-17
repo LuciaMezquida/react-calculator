@@ -173,4 +173,15 @@ describe("calculateExpression", () => {
     expect(module.calculateExpression("1÷0")).toBe(undefined);
     expect(errorSpy).toHaveBeenCalledTimes(1);
   });
+  it("handles multiple operations", () => {
+    expect(module.calculateExpression("1÷1×2×2+3×22")).toBe(70);
+  });
+
+  it("handles trailing operator", () => {
+    expect(module.calculateExpression("1÷1×2×2+3×22+")).toBe(70);
+  });
+
+  it("handles empty expression", () => {
+    expect(module.calculateExpression("")).toBe(undefined);
+  });
 });

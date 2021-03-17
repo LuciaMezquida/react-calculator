@@ -2,11 +2,23 @@ import React, { useState } from 'react'
 
 const rows = [[7, 8, 9], [4, 5, 6], [1, 2, 3], [0]];
 const operators = ['+', '-', '×', '÷'];
-const equal = '=';
-const clear = 'C';
+const equal: string = '=';
+const clear: string = 'C';
+const calculateExpression = (expression: string) => {
+  const mulRegex = /×/g;
+  const divRegex = /÷/g;
+  const toEvaluate = expression.replace(mulRegex, "*").replace(divRegex, "/");
+  // todo - refactor eval later
+  const result = eval(toEvaluate);
+  return result;
+};
 
 const Calculator = () => {
   const [value, setValue] = useState('')
+  const calculate = () => {
+    const results = calculateExpression(value);
+    setValue(results);
+  };
   const renderRows = rows.map((row, index) => {
     return(
       <div key={index} role='row'>
@@ -14,7 +26,7 @@ const Calculator = () => {
         {row.map(n => (
         <button onClick={() => setValue(value.concat(n.toString()))} key={n}>{n}</button>
         ))}
-        {index === 3 && <button>{equal}</button>}
+        {index === 3 && <button onClick={calculate}>{equal}</button>}
       </div>
     )
   }

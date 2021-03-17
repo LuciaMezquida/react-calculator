@@ -15,6 +15,8 @@ const calculateExpression = (expression: string) => {
 
 const Calculator = () => {
   const [value, setValue] = useState('')
+  console.log(value);
+  
   const calculate = () => {
     const results = calculateExpression(value);
     setValue(results);
@@ -25,7 +27,7 @@ const Calculator = () => {
       <div key={index} role='row'>
         {index === 3 && <button onClick={clearValue}>{clear}</button>}
         {row.map(n => (
-        <button onClick={() => setValue(value.concat(n.toString()))} key={n}>{n}</button>
+        <button onClick={() => setValue(value.toString().concat(n.toString()))} key={n}>{n}</button>
         ))}
         {index === 3 && <button onClick={calculate}>{equal}</button>}
       </div>
@@ -33,7 +35,7 @@ const Calculator = () => {
   }
   )
   const renderOperators = operators.map(op => (
-    <button key={op} onClick={() => setValue(value.concat(op))} >{op.toString()}</button>
+    <button key={op} onClick={() => setValue(value.toString().concat(op))} >{op.toString()}</button>
   ))
   return(
     <>

@@ -12,7 +12,7 @@ const Calculator = () => {
       <div key={index} role='row'>
         {index === 3 && <button>{clear}</button>}
         {row.map(n => (
-        <button key={n}>{n}</button>
+        <button onClick={() => setValue(value.concat(n.toString()))} key={n}>{n}</button>
         ))}
         {index === 3 && <button>{equal}</button>}
       </div>
@@ -20,17 +20,12 @@ const Calculator = () => {
   }
   )
   const renderOperators = operators.map(op => (
-    <button key={op}>{op}</button>
+    <button key={op} onClick={() => setValue(value.concat(op))} >{op.toString()}</button>
   ))
   return(
     <>
     <h1>Calculator</h1>
-    <input
-type="text"
-defaultValue={value}
-placeholder="calculate"
-disabled
-/>
+    <input type="text" defaultValue={value} placeholder="calculate" disabled/>
     <div className="calculator" role='grid'>
       {renderRows}
       {renderOperators}

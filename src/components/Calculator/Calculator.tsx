@@ -48,11 +48,11 @@ const Calculator = () => {
   const renderRows = rows.map((row, index) => {
     return(
       <div key={index} role='row'>
-        {index === 3 && <button onClick={clearValue}>{clear}</button>}
+        {index === 3 && <button className="button" onClick={clearValue}>{clear}</button>}
         {row.map((n) => (
         <button onClick={() => setValue(value.toString().concat(n.toString()))} key={n}>{n}</button>
         ))}
-        {index === 3 && <button onClick={calculate}>{equal}</button>}
+        {index === 3 && <button className="button orange" onClick={calculate}>{equal}</button>}
       </div>
     )
   }
@@ -64,10 +64,14 @@ const Calculator = () => {
     <>
       <main className='main'>
         <div className="main__container">
-          <input type="text" defaultValue={value} placeholder="0" disabled/>
-          <div className="calculator" role='grid'>
-            {renderRows}
-            {renderOperators}
+          <input className="main__results" type="text" defaultValue={value} placeholder="0" disabled/>
+          <div className="main__calculator" role='grid'>
+            <div className="main__calculator--numbers">
+              {renderRows}
+            </div>
+            <div className="main__calculator--operators">
+              {renderOperators}
+            </div>
           </div>
         </div>
       </main>

@@ -11,5 +11,28 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: $color-primary;
+    padding: 2rem;
+    border-radius: 5px;
+  }
+  &__results {
+    border: none;
+    width: 200px;
+    height: 50px;
+    background-color: $color-secondary;
+    text-align: right;
+    font-size: 2rem;
+    padding: 5px;
+    &::placeholder {
+      color: $color-light;
+    }
+  }
+  &__calculator {
+    display: flex;
+    align-items: center;
+    &--operators {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

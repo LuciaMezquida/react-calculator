@@ -1,6 +1,6 @@
 # 🧮 Calculator
 
-Este ha sido un proyecto creado con la idea de aprender testing ([Jest](https://jestjs.io/docs/tutorial-react), [Testing-library](https://testing-library.com/)) y [Typescript](https://www.typescriptlang.org/) en un entorno de [React](https://es.reactjs.org/).
+Este ha sido un proyecto creado con la idea de aprender testing ([Jest](https://jestjs.io/docs/tutorial-react), [Testing-library](https://testing-library.com/)) y [Typescript](https://www.typescriptlang.org/) dentro de un entorno de [React](https://es.reactjs.org/).
 
 [![Main image](https://i.postimg.cc/dVDk2RPh/Captura-de-pantalla-2021-03-18-a-las-16-22-37.png)](https://postimg.cc/tsQ4yxgb)
 

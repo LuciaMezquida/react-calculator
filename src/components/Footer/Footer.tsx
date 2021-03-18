@@ -4,7 +4,9 @@ const Footer = () => {
   return(
     <footer className="footer" role='footer'>
       <small className="footer__owner">
-    Made with <i className="fas fa-cat"></i> by Lucia Mezquida</small>
+    Made with <i className="fas fa-cat"></i> by Lucia Mezquida
+    </small>
+    <nav role='nav'></nav>
     </footer>
   )
 }

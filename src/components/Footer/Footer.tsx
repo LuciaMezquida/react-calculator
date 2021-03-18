@@ -8,7 +8,7 @@ const Footer = () => {
       </small>
       <nav role='navigation'>
         <ul className="footer__nav">
-          <li className="list" role='list'>
+          <li className="list" >
             <a
               href="//www.linkedin.com/in/luciamezquidajuan/"
               className="footer__link"
@@ -18,7 +18,7 @@ const Footer = () => {
               ><i className="fab fa-linkedin-in"></i
             ></a>
           </li>
-          <li className="list" role='list'>
+          <li className="list" >
             <a
               href="//github.com/LuciaMezquida"
               className="footer__link"
@@ -28,7 +28,7 @@ const Footer = () => {
               ><i className="fab fa-github-alt"></i
             ></a>
           </li>
-          <li className="list" role='list'>
+          <li className="list" >
             <a
               href="//twitter.com/LuciCodes"
               className="footer__link"

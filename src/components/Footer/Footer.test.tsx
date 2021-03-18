@@ -13,9 +13,9 @@ describe('<Footer />', () => {
     const navElement = screen.getByRole('navigation')
     expect(navElement).toBeInTheDocument();
   });
-  it('show 3 list', ()=>{
+  it('show a list', ()=>{
     render(<Footer />);
-    const listElement = screen.getAllByRole('list')
-    expect(listElement).toHaveLength(3)
+    const listElement = screen.getByRole('list')
+    expect(listElement).toBeInTheDocument();
   })
 })

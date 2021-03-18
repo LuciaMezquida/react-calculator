@@ -62,12 +62,12 @@ const Calculator = () => {
   ))
   return(
     <>
-    <h1>Calculator</h1>
-    <input type="text" defaultValue={value} placeholder="0" disabled/>
-    <div className="calculator" role='grid'>
-      {renderRows}
-      {renderOperators}
-    </div>
+      <h1>Calculator</h1>
+      <input type="text" defaultValue={value} placeholder="0" disabled/>
+      <div className="calculator" role='grid'>
+        {renderRows}
+        {renderOperators}
+      </div>
     </>
     
   )

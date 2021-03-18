@@ -7,3 +7,9 @@ test('renders calculator', () => {
   const calculatorElement = screen.getByText(/calculator/i);
   expect(calculatorElement).toBeInTheDocument();
 });
+test('renders footer', () => {
+  render(<App />);
+  const footerElement = screen.getByRole('footer');
+  expect(footerElement).toBeInTheDocument();
+});
+

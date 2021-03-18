@@ -50,15 +50,15 @@ const Calculator = () => {
       <div key={index} role='row'>
         {index === 3 && <button className="button" onClick={clearValue}>{clear}</button>}
         {row.map((n) => (
-        <button onClick={() => setValue(value.toString().concat(n.toString()))} key={n}>{n}</button>
+        <button className="button" onClick={() => setValue(value.toString().concat(n.toString()))} key={n}>{n}</button>
         ))}
-        {index === 3 && <button className="button orange" onClick={calculate}>{equal}</button>}
+        {index === 3 && <button className="button" onClick={calculate}>{equal}</button>}
       </div>
     )
   }
   )
   const renderOperators = operators.map(op => (
-    <button key={op} onClick={() => setValue(value.toString().concat(op))} >{op.toString()}</button>
+    <button className="button orange" key={op} onClick={() => setValue(value.toString().concat(op))} >{op.toString()}</button>
   ))
   return(
     <>

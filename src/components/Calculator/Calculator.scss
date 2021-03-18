@@ -13,21 +13,24 @@
     flex-direction: column;
     background-color: $color-primary;
     padding: 2rem;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   &__results {
     border: none;
-    width: 200px;
-    height: 50px;
+    width: 220px;
+    height: 60px;
     background-color: $color-secondary;
     text-align: right;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
     padding: 5px;
+    color: $color-light;
     &::placeholder {
       color: $color-light;
     }
   }
   &__calculator {
+    margin-top: 40px;
     display: flex;
     align-items: center;
     &--operators {
@@ -35,4 +38,17 @@
       flex-direction: column;
     }
   }
+}
+.button {
+  border: none;
+  background-color: $color-secondary;
+  width: 52px;
+  height: 52px;
+  margin: 3px;
+  border-radius: 20px;
+  color: $color-light;
+  font-size: 1.6rem;
+}
+.orange {
+  background-color: $color-tertiary;
 }

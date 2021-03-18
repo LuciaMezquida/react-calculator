@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { evaluate } from "mathjs";
 import './Calculator.scss'
 
-const rows = [[7, 8, 9], [4, 5, 6], [1, 2, 3], [0]];
-const operators = ['+', '-', '×', '÷'];
+const rows: number[][] = [[7, 8, 9], [4, 5, 6], [1, 2, 3], [0]];
+const operators: string[] = ['+', '-', '×', '÷'];
 const equal: string = '=';
 const clear: string = 'C';
 
@@ -62,12 +62,16 @@ const Calculator = () => {
   ))
   return(
     <>
-      <h1>Calculator</h1>
-      <input type="text" defaultValue={value} placeholder="0" disabled/>
-      <div className="calculator" role='grid'>
-        {renderRows}
-        {renderOperators}
-      </div>
+      <main className='main'>
+        <h1>Calculator</h1>
+        <div className="main__container">
+          <input type="text" defaultValue={value} placeholder="0" disabled/>
+          <div className="calculator" role='grid'>
+            {renderRows}
+            {renderOperators}
+          </div>
+        </div>
+      </main>
     </>
     
   )

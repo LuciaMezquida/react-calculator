@@ -1,6 +1,13 @@
 @import "../../styles/variables.scss";
 
-.main-container {
-  height: 96vh;
+.main {
   background-color: $color-background;
+
+  &__container {
+    height: 96vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

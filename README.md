@@ -3,27 +3,76 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Guía de inicio rápido
 
-In the project directory, you can run:
+> **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/)
 
-### `yarn start`
+### Arrancar el proyecto desde cero:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Si has decidido clonar este repo,:
+1. **Abre una terminal** en la carpeta raíz de tu repositorio.
+1. **Instala las dependencias** locales ejecutando en la terminal el comando:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `yarn test`
+### Para arrancar el proyecto:
+
+Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. Para ello ejecuta el comando:
+
+```bash
+npm start
+```
+
+### Para arrancar los test
+
+Para comprobar que todo va según lo previsto, puedes arrancar los test con el siguiente comando:
+
+```bash
+npm run test
+```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### Para compilar el proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cuando ya tenemos listo nuestro proyecto para subirlo a producción, ejecutamos el siguiente comando para generar el directorio build:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
+
+## Estructura de carpetas
+
+```
+src
+ ├─ html // los ficheros de esta carpeta se copian en public/api/
+ |  ├─ partials
+ |  |  ├─ addNewTask.html
+ |  |  ├─ footer.html
+ |  |  └─ main.html
+ |  └─ index.html
+ ├─ images
+ |  └─ list.png
+ ├─ js // los ficheros de esta carpeta se concatenan en el fichero main.js y este se guarda en public/main.js
+ |  ├─ 01-variables.js
+ |  ├─ 02-create-date.js
+ |  ├─ 03-create-tasks-list.js
+ |  ├─ 04-manage-every-task.js
+ |  ├─ 05-local-storage.js
+ |  └─ 06-events.js
+ └─ scss
+    ├─ core
+    |  ├─ _reset.scss
+    |  └─ _variables.scss
+    ├─ layout
+    |  ├─ _addNewTask.scss
+    |  ├─ _footer.scss
+    |  └─ _main.scss
+    └─ pages
+    |  └─ _index.scss
+    └─ _main.scss
+ 
+```

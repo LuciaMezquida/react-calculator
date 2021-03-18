@@ -35,11 +35,11 @@ describe('<Calculator />', () => {
   })
   it("renders an input", () => {
     render(<Calculator />);
-    expect(screen.getByPlaceholderText("calculate")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("0")).toBeInTheDocument();
   });
   it("renders an input disabled", () => {
     render(<Calculator />);
-    expect(screen.getByPlaceholderText("calculate")).toBeDisabled();
+    expect(screen.getByPlaceholderText("0")).toBeDisabled();
   });
   it("displays users inputs", async () => {
     render(<Calculator />);
@@ -50,7 +50,7 @@ describe('<Calculator />', () => {
     fireEvent.click(plus);
     fireEvent.click(two);
 
-    const result = await screen.findByPlaceholderText("calculate");
+    const result = await screen.findByPlaceholderText("0");
     // @ts-ignore
     expect(result.value).toBe("1+2");
   });
@@ -72,7 +72,7 @@ describe('<Calculator />', () => {
     fireEvent.click(divide);
     fireEvent.click(five);
 
-    const result = await screen.findByPlaceholderText("calculate");
+    const result = await screen.findByPlaceholderText("0");
     // @ts-ignore
     expect(result.value).toBe("3×2-1÷5");
   });
@@ -87,7 +87,7 @@ describe('<Calculator />', () => {
     fireEvent.click(two);
     fireEvent.click(equal);
 
-    const result = await screen.findByPlaceholderText("calculate");
+    const result = await screen.findByPlaceholderText("0");
 
     expect(
       (result as HTMLElement & {
@@ -116,7 +116,7 @@ describe('<Calculator />', () => {
     fireEvent.click(five);
     fireEvent.click(equal);
 
-    const result = await screen.findByPlaceholderText("calculate");
+    const result = await screen.findByPlaceholderText("0");
     expect(
       (result as HTMLElement & {
         value: string;
@@ -135,7 +135,7 @@ describe('<Calculator />', () => {
 
     fireEvent.click(clear);
 
-    const result = await screen.findByPlaceholderText("calculate");
+    const result = await screen.findByPlaceholderText("0");
     expect(
       (result as HTMLElement & {
         value: string;

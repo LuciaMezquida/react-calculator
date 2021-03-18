@@ -2,8 +2,8 @@ import Calculator from './Calculator/Calculator';
 
 function App() {
   return (
-    <div className="App">
-      <main>
+    <div>
+      <main className='main-container'>
         <Calculator />
       </main>
     </div>

@@ -10,7 +10,12 @@ describe('<Footer />', () => {
   });
   it('renders nav', () => {
     render(<Footer />);
-    const navElement = screen.getByRole('nav')
+    const navElement = screen.getByRole('navigation')
     expect(navElement).toBeInTheDocument();
   });
+  it('show 3 list', ()=>{
+    render(<Footer />);
+    const listElement = screen.getAllByRole('list')
+    expect(listElement).toHaveLength(3)
+  })
 })

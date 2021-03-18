@@ -9,7 +9,7 @@ test('renders calculator', () => {
 });
 test('renders footer', () => {
   render(<App />);
-  const footerElement = screen.getByRole('footer');
+  const footerElement = screen.getByRole('navigation');
   expect(footerElement).toBeInTheDocument();
 });
 

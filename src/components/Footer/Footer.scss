@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  background-color: $color-secondary;
+  color: $color-light;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4vh;
+  &__owner {
+    font-size: 0.6rem;
+    @media all and(min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  &__nav {
+    display: flex;
+  }
+  &__link {
+    color: $color-light;
+    padding-right: 1.7rem;
+    transition: ease 0.8s;
+    &:hover {
+      color: $color-tertiary;
+    }
+  }
+}
+.fa-cat {
+  color: $color-tertiary;
+}

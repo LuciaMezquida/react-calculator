@@ -33,7 +33,7 @@ export const calculateExpression = (expression: string) => {
 
     } catch (err) {
     console.error(err);
-    return undefined;
+    return 0;
     }
 };
 
@@ -60,7 +60,9 @@ const Calculator = () => {
   const renderOperators = operators.map(op => (
     <button className="button orange" key={op} onClick={() => setValue(value.toString().concat(op))} >{op.toString()}</button>
   ))
+  console.log(value);
   return(
+    
     <>
       <main className='main'>
         <div className="main__container">

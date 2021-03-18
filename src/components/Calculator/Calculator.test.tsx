@@ -170,7 +170,7 @@ describe("calculateExpression", () => {
 
   it("division by 0 returns 0 and logs exception", () => {
     const errorSpy = jest.spyOn(console, "error");
-    expect(module.calculateExpression("1÷0")).toBe(undefined);
+    expect(module.calculateExpression("1÷0")).toBe(0);
     expect(errorSpy).toHaveBeenCalledTimes(1);
   });
   it("handles multiple operations", () => {

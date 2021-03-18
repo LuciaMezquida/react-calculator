@@ -48,6 +48,10 @@
   border-radius: 20px;
   color: $color-light;
   font-size: 1.6rem;
+  outline-style: none;
+  &:active {
+    transform: scale(0.9);
+  }
 }
 .orange {
   background-color: $color-tertiary;

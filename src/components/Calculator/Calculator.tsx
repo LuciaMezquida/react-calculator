@@ -63,7 +63,6 @@ const Calculator = () => {
   return(
     <>
       <main className='main'>
-        <h1>Calculator</h1>
         <div className="main__container">
           <input type="text" defaultValue={value} placeholder="0" disabled/>
           <div className="calculator" role='grid'>

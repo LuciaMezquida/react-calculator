@@ -4,7 +4,7 @@ import App from './App';
 
 test('renders calculator', () => {
   render(<App />);
-  const calculatorElement = screen.getByText(/calculator/i);
+  const calculatorElement = screen.getByRole('main');
   expect(calculatorElement).toBeInTheDocument();
 });
 test('renders footer', () => {
